@@ -31,11 +31,31 @@
 *                     
  ****************************************************************************
 */
+import React, { useState } from 'react';  
 import ProCard from "../components/UI/proCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import {  faGraduationCap ,faCirclePlus} from "@fortawesome/free-solid-svg-icons";
 import Tab from "../components/UI/tab";
- const App = () => { 
+import SearchField from "../components/UI/searchInput";
+import Select from '../components/UI/select';
+import Button from '../components/UI/button';
+  const App = () => { 
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const [headliner, setHeadliner] = useState("");
+
+  const guitarLegends = [
+    { label: "All Types", value: "All Types" },
+    { label: "Videos", value: "Videos" },
+    { label: "Audios", value: "Audios" },
+    { label: "PDF", value: "PDF" },
+    { label: "Excel", value: "Excel" },
+    { label: "Documents", value: "Documents" },
+   ];
+  
+    const handleSearch = () => {
+      console.log('Searching for:', searchTerm);
+    };
   
     const tabs = [
        {
@@ -121,12 +141,41 @@ import Tab from "../components/UI/tab";
   return (
  <>
  <div>
-  <h1 className="text-2xl font-semibold font-serif m-3">
+  <h1 className="text-2xl font-semibold font-serif m-2">
     <FontAwesomeIcon icon={faGraduationCap}/> All the skills you need in one place
   </h1>
+<div className="grid grid-cols-12 gap-4">
+  <div className="col-span-12 sm:col-span-12 md:col-span-8 lg:col-span-8 xl:col-span-8">
+    <SearchField 
+      name="search"
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      onSubmit={handleSearch}
+      placeholder="Type something to search..."
+    />
+  </div>
+
+  <div className="col-span-12 sm:col-span-12 md:col-span-2 lg:col-span-2 xl:col-span-2">
+    <Select
+      label="Headliner"
+      name="headliner"
+      value={headliner}
+      onChange={(e) => setHeadliner(e.target.value)}
+      options={guitarLegends}
+      disabled={false}
+    />
+  </div>
+    
+  <div className="col-span-12 sm:col-span-12 md:col-span-2 lg:col-span-2 xl:col-span-2">
+    <Button  fullwidth variant='base' onClick={() =>  console.log("")} type="info" size='sm' >Add New Course <FontAwesomeIcon icon={faCirclePlus} /> </Button>
+  </div>
+</div>
 
   </div>
+  <div className='mt-5'>
    <Tab tabs={tabs}/> 
+
+  </div>
  </>   
   );
 };

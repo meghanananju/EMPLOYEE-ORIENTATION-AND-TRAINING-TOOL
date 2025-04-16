@@ -67,7 +67,7 @@ const SearchField: React.FC<SearchFieldProps> = ({
           onChange={onChange}
           placeholder={placeholder}
           required={required}
-          className="mt-0.5 w-full rounded outline-1 p-2 pr-12 font-serif sm:text-sm"
+          className="mt-0.5 w-full rounded-md border border-gray-400 p-2 pr-12 font-serif sm:text-sm"
         />
 
         <span className="absolute inset-y-0 right-2 grid w-8 place-content-center">

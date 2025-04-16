@@ -122,7 +122,7 @@ const Select: React.FC<SelectProps> = ({ options, selectType = 'single', placeho
           {label} {required && <span className="text-red-500">*</span>}
         </Label>
       )}
-      <div className="relative mt-2">
+      <div className="relative mt-2 p-0.5">
         <ListboxButton
           className={`w-full  rounded-md bg-white py-2 px-3 text-left text-gray-900 outline-1 focus:outline-none focus:ring-2 sm:text-sm ${errorMsg ? 'outline-red-500' : 'focus:ring-indigo-500'} ${disabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'}`}
           disabled={disabled}

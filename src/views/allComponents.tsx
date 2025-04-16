@@ -46,16 +46,16 @@ import SearchField from '../components/UI/searchInput';
 import {Checkbox,CheckboxGroup} from '../components/UI/checkBox';
 import {RadioButton} from '../components/UI/radioButton';
 import Switch from '../components/UI/switch';
-import Select from '../components/UI/pulldown';
+import Pulldown from '../components/UI/pulldown';
 import Tab from '../components/UI/tab';
 import MultiColorLoader from '../components/UI/mulitColorLoader';
 import Loader from '../components/UI/loader';
-import { Table ,Thead, Tbody, Tr,   Td} from '../components/UI/table';
+import { Table ,Thead, Tbody, Tr, Th,  Td} from '../components/UI/table';
 import { LikeButton } from '../components/UI/likeButton';
 // import { SquareSwitch } from '../components/UI/circularSwitch';
 import SquareSwitch from '../components/UI/circularSwitch';
 import Divider from '../components/UI/divider';
-// Define the type for the data structure with index signature
+ // Define the type for the data structure with index signature
 interface TableData {
   [key: string]: string;
   name: string;
@@ -274,6 +274,8 @@ const [showLoader,setShowLoader]=useState(false)
  <MultiColorLoader />
   )}  
  
+
+     
       {/* Buttons */}
       <div className='flex flex-wrap items-center justify-around gap-6 '>
         {/* <BackButton label="Go Home" onClick={handleBackClick} /> */}
@@ -294,7 +296,7 @@ const [showLoader,setShowLoader]=useState(false)
         <Button text="xl Modal" variant="base" color="blue" href="#" onClick={() => setIsModalOpenxl(true)} />
         <Button text="Info Alert" onClick={() => setShowInfo(true)} type="info" size='md' />
 
-<div className="flex items-center justify-center border border-gray-200 px-4 py-2 space-x-2 cursor-pointer" >
+<div className="flex items-center justify-center border rounded-lg border-gray-200 px-4 py-2 space-x-2 cursor-pointer" >
   <LikeButton
     initiallyLiked={false}
     onToggle={(liked) => console.log("Liked:", liked)}
@@ -383,7 +385,7 @@ const [showLoader,setShowLoader]=useState(false)
 
 
 
-              <Select
+              <Pulldown
                 options={people}
                 // value={[
                 //   { id: 1, name: 'Wade Cooper' },
@@ -395,7 +397,7 @@ const [showLoader,setShowLoader]=useState(false)
                 required
 
               />
-              <Select
+              <Pulldown
                 label='Select a value'
                 value={{ id: 1, name: 'Wade Cooper' }}
                 options={people}
@@ -403,7 +405,7 @@ const [showLoader,setShowLoader]=useState(false)
                 placeholder="Select a value"
               />
 
-              <Select
+              <Pulldown
                 options={people}
                 value={[
                   { id: 1, name: 'Wade Cooper' },
@@ -680,7 +682,7 @@ const [showLoader,setShowLoader]=useState(false)
 
 
 
-        <Select
+        <Pulldown
           options={people}
           // value={[
           //   { id: 1, name: 'Wade Cooper' },
@@ -692,7 +694,7 @@ const [showLoader,setShowLoader]=useState(false)
           required
 
         />
-        <Select
+        <Pulldown
           label='Select a value'
           value={{ id: 1, name: 'Wade Cooper' }}
           options={people}
@@ -700,7 +702,7 @@ const [showLoader,setShowLoader]=useState(false)
           placeholder="Select a value"
         />
 
-        <Select
+        <Pulldown
           options={people}
           value={[
             { id: 1, name: 'Wade Cooper' },
@@ -784,7 +786,11 @@ const [showLoader,setShowLoader]=useState(false)
 
       <div>
      <Table border='true'>
-      <Thead headers={headers} className='hover:bg-blue-500'/>
+       <Thead className="hover:bg-blue-500">
+    {headers.map((header, index) => (
+      <Th key={index}>{header}</Th>
+    ))}
+  </Thead>
       <Tbody>
         {data.map((item, index) => (
           <Tr key={index} className='hover:bg-blue-50'>

@@ -31,66 +31,12 @@
 *                     
  ****************************************************************************
 */
-
-// import React from 'react';
-
-// export interface ButtonProps {
-//   text: string;
-//   onClick: () => void;
-//   type?: 'error' | 'success' | 'warning' | 'info';
-//   customColor?: string;
-//   disabled?: boolean;
-//   size?: 'sm' | 'md' | 'lg' | 'xl';
-//   fullwidth?: boolean;
-// }
-
-// const Button: React.FC<ButtonProps> = ({
-//   text,
-//   onClick,
-//   type = 'info',
-//   customColor,
-//   disabled = false,
-//   size = 'md',
-//   fullwidth = false,
-// }) => {
-//   const typeClasses: Record<string, string> = {
-//     error: 'bg-red-600 hover:bg-red-700 text-white',
-//     success: 'bg-green-600 hover:bg-green-700 text-white',
-//     warning: 'bg-yellow-400 hover:bg-yellow-500 text-gray-700',
-//     info: 'bg-blue-600 hover:bg-blue-700 text-white',
-//   };
-
-//   const bgColor = customColor
-//     ? `bg-${customColor}-500 hover:bg-${customColor}-600 text-white`
-//     : typeClasses[type];
-
-//   const sizeClasses: Record<string, string> = {
-//     sm: 'px-2 py-1 text-sm md:px-4 md:py-2',
-//     md: 'px-4 py-2 text-base md:px-5 md:py-2.5',
-//     lg: 'px-5 py-2.5 text-lg md:px-6 md:py-3',
-//     xl: 'px-6 py-3 text-xl md:px-8 md:py-4',
-//   };
-
-//   return (
-//     <button
-//       className={`Btn font-semibold rounded-md transition duration-300 ${bgColor} ${sizeClasses[size]} ${
-//         disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
-//       } ${fullwidth ? 'w-full' : ''}`}
-//       onClick={disabled ? undefined : onClick}
-//       disabled={disabled}
-//     >
-//       {text}
-//     </button>
-//   );
-// };
-
-// export default Button;
-
-
+ 
 import React from 'react';
 
 export interface StandardButtonProps {
-  text: string;
+  text?: string;
+  children?: React.ReactNode;
   onClick?: () => void;
   href?: string;
   variant?: 'base' | 'border';
@@ -104,6 +50,7 @@ export interface StandardButtonProps {
 
 const Button: React.FC<StandardButtonProps> = ({
   text,
+  children,
   onClick,
   href = '#',
   variant = 'base',
@@ -114,12 +61,12 @@ const Button: React.FC<StandardButtonProps> = ({
   size = 'md',
   fullwidth = false,
 }) => {
-  const baseClasses = `inline-block rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none ${
+  const baseClasses = `inline-flex items-center justify-center gap-2 rounded-md font-semibold transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none ${
     disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
   } ${fullwidth ? 'w-full' : ''}`;
 
   const sizeClasses: Record<string, string> = {
-    sm: 'px-2 py-1 text-sm md:px-4 md:py-2',
+    sm: 'px-2 py-1 text-sm md:px-4 md:py-2.5',
     md: 'px-4 py-2 text-base md:px-5 md:py-2.5',
     lg: 'px-5 py-2.5 text-lg md:px-6 md:py-3',
     xl: 'px-6 py-3 text-xl md:px-8 md:py-4',
@@ -162,11 +109,12 @@ const Button: React.FC<StandardButtonProps> = ({
       disabled={onClick ? disabled : undefined}
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses}`}
     >
-      {text}
+      {children || text}
     </Component>
   );
 };
 
-
 export default Button;
+
+
 

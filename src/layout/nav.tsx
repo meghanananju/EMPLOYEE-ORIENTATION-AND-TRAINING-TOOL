@@ -41,7 +41,7 @@ import {
   faFileInvoice,
   faUser,
   faCircleInfo,
-  faShieldHalved,
+  // faShieldHalved,
   faGear,
   faCogs,
   faLock,
@@ -59,11 +59,12 @@ export interface NavItem {
 const config: NavItem[] = [
   { label: 'Dashboard', path: '/dashboard', icon: <FontAwesomeIcon icon={faGear} /> },
   { label: 'All Components', path: '/allComponents', icon: <FontAwesomeIcon icon={faCreditCard} /> },
-  
+    { label: 'Users', path: '/addUser', icon: <FontAwesomeIcon icon={faUsers} /> },
+
   {
     label: 'Teams',
     path: '#Teams',
-    icon: <FontAwesomeIcon icon={faUsers} />,
+    icon: <FontAwesomeIcon icon={faUser} />,
     children: [
       {
         label: 'Management',
@@ -93,16 +94,16 @@ const config: NavItem[] = [
       { label: 'Calendar', path: '/calendar', icon: <FontAwesomeIcon icon={faCalendar} /> },
     ],
   },
-  { label: 'Billing', path: '/billing', icon: <FontAwesomeIcon icon={faFileInvoice} /> },
-  {
-    label: 'Account',
-    path: '#Account',
-    icon: <FontAwesomeIcon icon={faUser} />,
-    children: [
-      { label: 'Details', path: '/details', icon: <FontAwesomeIcon icon={faCircleInfo} /> },
-      { label: 'Security', path: '/security', icon: <FontAwesomeIcon icon={faShieldHalved} /> },
-    ],
-  },
+  { label: 'Video', path: '/courses', icon: <FontAwesomeIcon icon={faFileInvoice} /> },
+  // {
+  //   label: 'Account',
+  //   path: '#Account',
+  //   icon: <FontAwesomeIcon icon={faUser} />,
+  //   children: [
+  //     { label: 'Details', path: '/details', icon: <FontAwesomeIcon icon={faCircleInfo} /> },
+  //     { label: 'Security', path: '/security', icon: <FontAwesomeIcon icon={faShieldHalved} /> },
+  //   ],
+  // },
   {
     label: 'Logout',
     path: '/logout',
