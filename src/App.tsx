@@ -32,7 +32,7 @@
  ****************************************************************************
 */
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Home from './views/home';
+// import Home from './views/home';
 import Login from './views/login';
 import DefaultLayout from './layout/layout';
 function App() {
@@ -41,8 +41,8 @@ function App() {
     <Routes>
       {/* Public routes OUTSIDE layout */}
       {/* <Route path="/" element={<Home />} /> */}
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
+      {/* <Route path="/" element={<Home />} /> */}
+      <Route path="/" element={<Login />} />
 
       {/* Protected routes INSIDE layout */}
       <Route path="*" element={<DefaultLayout />}>

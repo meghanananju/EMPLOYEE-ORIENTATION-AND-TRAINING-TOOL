@@ -33,13 +33,17 @@
 */
 import React, { useState } from 'react';  
 import ProCard from "../components/UI/proCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {
+ faVideo, faHeadphones, faFileAlt, faUsers
+} from '@fortawesome/free-solid-svg-icons';
 import {  faGraduationCap ,faCirclePlus} from "@fortawesome/free-solid-svg-icons";
 import Tab from "../components/UI/tab";
 import SearchField from "../components/UI/searchInput";
 import Select from '../components/UI/select';
 import Button from '../components/UI/button';
-  const App = () => { 
+import Card from '../components/UI/card';
+   const App = () => { 
     const [searchTerm, setSearchTerm] = useState('');
 
     const [headliner, setHeadliner] = useState("");
@@ -141,9 +145,71 @@ import Button from '../components/UI/button';
   return (
  <>
  <div>
-  <h1 className="text-2xl font-semibold font-serif m-2">
+   <h1 className="text-2xl font-semibold font-serif">
     <FontAwesomeIcon icon={faGraduationCap}/> All the skills you need in one place
   </h1>
+ </div>
+ 
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-2">
+  {/* Total Videos */}
+  <Card>
+    <div className="flex justify-between items-center p-6 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-lg">
+      <div className="text-3xl sm:text-3xl">
+        <FontAwesomeIcon icon={faVideo} />
+      </div>
+      <div className="text-right">
+        <p className="text-xl font-bold">204</p>
+        <p className="text-sm opacity-80">Total Videos</p>
+      </div>
+    </div>
+  </Card>
+
+  {/* Total Audio */}
+  <Card>
+    <div className="flex justify-between items-center p-6 rounded-lg bg-gradient-to-r from-green-600 to-green-500 text-white shadow-lg">
+      <div className="text-3xl sm:text-3xl">
+        <FontAwesomeIcon icon={faHeadphones} />
+      </div>
+      <div className="text-right">
+        <p className="text-xl font-bold">98</p>
+        <p className="text-sm opacity-80">Total Audio</p>
+      </div>
+    </div>
+  </Card>
+
+  {/* Total Documents */}
+  <Card>
+    <div className="flex justify-between items-center p-6 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-400 text-white shadow-lg">
+      <div className="text-3xl sm:text-3xl">
+        <FontAwesomeIcon icon={faFileAlt} />
+      </div>
+      <div className="text-right">
+        <p className="text-xl font-bold">332</p>
+        <p className="text-sm opacity-80">Total Documents</p>
+      </div>
+    </div>
+  </Card>
+
+  {/* Total Users */}
+  <Card>
+    <div className="flex justify-between items-center p-6 rounded-lg bg-gradient-to-r from-rose-600 to-rose-500 text-white shadow-lg">
+      <div className="text-2xl sm:text-3xl">
+        <FontAwesomeIcon icon={faUsers} />
+      </div>
+      <div className="text-right">
+        <p className="text-xl font-bold">328</p>
+        <p className="text-sm opacity-80">Total Users</p>
+      </div>
+    </div>
+  </Card>
+</div>
+
+
+ 
+
+<br />
+ 
+ <div>
 <div className="grid grid-cols-12 gap-4">
   <div className="col-span-12 sm:col-span-12 md:col-span-8 lg:col-span-8 xl:col-span-8">
     <SearchField 

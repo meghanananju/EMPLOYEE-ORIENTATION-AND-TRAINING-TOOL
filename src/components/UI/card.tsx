@@ -32,7 +32,7 @@
  ****************************************************************************
 */
 type CardProps = {
-  title: string;
+  title?: React.ReactNode; // change from string to React.ReactNode
   footer?: React.ReactNode;
   otherStyle?: string;
   children?: React.ReactNode;
@@ -49,8 +49,8 @@ const Card: React.FC<CardProps> = ({
       className={`flex flex-col flex-wrap gap-2 dark:text-white max-h-md w-full bg-white dark:bg-neutral-900 p-5 rounded-md shadow-xl ${otherStyle}`}
     >
       {/* Card Header */}
-      <h3 className="text-xl font-bold">{title}</h3>
-      
+      <h3 className="text-xl font-bold flex items-center gap-2">{title}</h3>
+
       {/* Card Body */}
       <div className="text-sm font-serif">
         {children}

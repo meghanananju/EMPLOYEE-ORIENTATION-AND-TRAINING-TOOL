@@ -37,15 +37,17 @@ import React, { useState } from 'react';
  import Logo from '../Images/ALTEN logo Black.png';
 import Button from '../components/UI/button';
 import Input from '../components/UI/input';
+import { useNavigate } from 'react-router-dom';
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [videoError, setVideoError] = useState(false);
-
+const navigate= useNavigate()
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Email:', email);
     console.log('Password:', password);
+    navigate('/dashboard')
   };
 
   return (
@@ -125,7 +127,8 @@ const Login: React.FC = () => {
         />
         <Button
           text="Login"
-          onClick={() => {}}
+          onClick={()=> navigate('/dashboard')
+}
           type="info"
           size="md"
           fullwidth={true}

@@ -229,7 +229,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onSidebarStateChange }) => {
               title={!isOpen ? logoutItem.label : ''}
               className="flex items-center gap-x-3 px-3.25 py-2 text-md rounded-md font-bold text-blue-600
                 hover:bg-blue-400 hover:text-white transition-colors cursor-pointer"
-              onClick={() => alert('Logout clicked')}
+              onClick={() => navigate('/')
+}
             >
               <div className="w-5 h-5 flex items-center justify-center text-md">
                 {logoutItem.icon}

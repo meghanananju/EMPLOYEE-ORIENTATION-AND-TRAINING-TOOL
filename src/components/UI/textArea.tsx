@@ -34,7 +34,7 @@
 
 // Textarea Component
 interface TextareaProps {
-  label: string;
+  label?: string;
   name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -68,11 +68,12 @@ const Textarea: React.FC<TextareaProps> = ({
         name={name}
         value={value}
         onChange={onChange}
-        className={`font-serif mt-1 w-full resize-none rounded outline-gray-400 border-gray-300 outline-1 pl-2 pr-2 pt-2 sm:text-sm ${className} ${errorMsg ? 'outline-red-500' : ''} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+        className={`font-serif mt-1 w-full resize-none rounded  outline-gray-300 border-gray-400 outline-1 pl-2 pr-2 pt-2 sm:text-md ${className} ${errorMsg ? 'outline-red-500' : ''} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
         rows={rows}
         required={required}
         placeholder={placeholder}
         disabled={disabled}
+        
       ></textarea>
       {errorMsg && <p className="text-red-500 text-sm mt-1 font-serif">{errorMsg}</p>}
     </label>
