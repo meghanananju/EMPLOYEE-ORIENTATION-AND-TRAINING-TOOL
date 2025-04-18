@@ -159,7 +159,7 @@ import Card from '../components/UI/card';
       </div>
       <div className="text-right">
         <p className="text-xl font-bold">204</p>
-        <p className="text-sm opacity-80">Total Videos</p>
+        <span className="text-sm opacity-80">Total Videos</span>
       </div>
     </div>
   </Card>
@@ -172,7 +172,7 @@ import Card from '../components/UI/card';
       </div>
       <div className="text-right">
         <p className="text-xl font-bold">98</p>
-        <p className="text-sm opacity-80">Total Audio</p>
+        <span className="text-sm opacity-80">Total Audio</span>
       </div>
     </div>
   </Card>
@@ -185,7 +185,7 @@ import Card from '../components/UI/card';
       </div>
       <div className="text-right">
         <p className="text-xl font-bold">332</p>
-        <p className="text-sm opacity-80">Total Documents</p>
+        <span className="text-sm opacity-80">Total Documents</span>
       </div>
     </div>
   </Card>
@@ -198,7 +198,7 @@ import Card from '../components/UI/card';
       </div>
       <div className="text-right">
         <p className="text-xl font-bold">328</p>
-        <p className="text-sm opacity-80">Total Users</p>
+        <span className="text-sm opacity-80">Total Users</span>
       </div>
     </div>
   </Card>

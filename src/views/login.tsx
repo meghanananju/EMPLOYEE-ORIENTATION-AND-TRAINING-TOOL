@@ -42,9 +42,11 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [videoError, setVideoError] = useState(false);
-const navigate= useNavigate()
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
+const navigate= useNavigate();
+
+
+  const handleLogin = ( ) => {
+    // e.preventDefault();
     console.log('Email:', email);
     console.log('Password:', password);
     navigate('/dashboard')
@@ -106,7 +108,7 @@ const navigate= useNavigate()
         </p>
       </div>
 
-      <form onSubmit={handleLogin} className="mt-4 space-y-6">
+      <form  className="mt-4 space-y-6">
         <Input
           id="email"
           name="email"
@@ -127,9 +129,11 @@ const navigate= useNavigate()
         />
         <Button
           text="Login"
-          onClick={()=> navigate('/dashboard')
-}
-          type="info"
+          onClick={() => {
+        console.log("Clicked!");
+        handleLogin();
+      }}
+           type="info"
           size="md"
           fullwidth={true}
         />
