@@ -65,8 +65,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         muted={muted}
         loop={loop}
         poster={poster}
+        
       >
-        <source src={videoSrc} type="video/mp4" />
+        <source src={videoSrc}  type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

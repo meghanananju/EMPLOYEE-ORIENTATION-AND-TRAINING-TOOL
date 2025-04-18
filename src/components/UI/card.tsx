@@ -33,7 +33,6 @@
 */
 type CardProps = {
   title: string;
-  content?: React.ReactNode;
   footer?: React.ReactNode;
   otherStyle?: string;
   children?: React.ReactNode;
@@ -41,21 +40,20 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({
   title,
-  content,
   footer,
   otherStyle = '',
   children,
 }) => {
   return (
     <div
-      className={`flex flex-col flex-wrap gap-2 dark:text-white max-h-md w-full bg-white dark:bg-neutral-900 p-5  rounded-md shadow-md ${otherStyle}`}
+      className={`flex flex-col flex-wrap gap-2 dark:text-white max-h-md w-full bg-white dark:bg-neutral-900 p-5 rounded-md shadow-xl ${otherStyle}`}
     >
       {/* Card Header */}
       <h3 className="text-xl font-bold">{title}</h3>
       
       {/* Card Body */}
-      <div className="text-sm">
-        {children !== undefined ? children : content}
+      <div className="text-sm font-serif">
+        {children}
       </div>
 
       {/* Card Footer */}
@@ -64,4 +62,4 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-export default Card;
+export default Card; 

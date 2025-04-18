@@ -31,41 +31,39 @@
 *                     
  ****************************************************************************
 */
+ 
 import React from 'react';
 
 type CountCardProps = {
-  title: string;
-  description?: string;
-  number: number;
+  number?: number;
+  title?: string;
   otherStyle?: string;
   children?: React.ReactNode;
 };
 
 // Count Card Component
 const CountCard: React.FC<CountCardProps> = ({
-  title,
-  description,
   number,
+  title,
   otherStyle = '',
   children,
 }) => {
   return (
     <div
-      className={`simple-card w-full bg-white shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden ${otherStyle}`}
+      className={`simple-card w-full bg-white shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-5 space-y-3 relative overflow-hidden ${otherStyle}`}
     >
-      {/* Number Circle */}
-      <div className="circle-number w-20 h-20 bg-blue-400 rounded-full absolute -right-9 -top-11">
-        <p className="number-text absolute bottom-2 left-5 text-white text-md">{number}</p>
-      </div>
-
-      {/* Card Content */}
-      <h1 className="font-bold text-xl">{title}</h1>
-
-      {children ? (
-        <div className="text-sm text-zinc-500 leading-6">{children}</div>
-      ) : (
-        description && <p className="text-sm text-zinc-500 leading-6">{description}</p>
+      {/* Number Circle (optional) */}
+      {number !== undefined && (
+        <div className="circle-number w-20 h-20 bg-blue-400 rounded-full absolute -right-9 -top-11">
+          <p className="number-text absolute bottom-2 left-5 text-white text-md">{number}</p>
+        </div>
       )}
+
+      {/* Optional Title */}
+      {title && <h1 className="font-bold text-xl">{title}</h1>}
+
+      {/* Custom Content */}
+      <div className="text-sm text-zinc-500 leading-6">{children}</div>
     </div>
   );
 };

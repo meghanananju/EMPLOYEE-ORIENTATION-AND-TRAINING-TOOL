@@ -52,6 +52,8 @@ import MultiColorLoader from '../components/UI/mulitColorLoader';
 import Loader from '../components/UI/loader';
 import { Table ,Thead, Tbody, Tr, Th,  Td} from '../components/UI/table';
 import { LikeButton } from '../components/UI/likeButton';
+import Image from '../Images/profile-background.jpg';
+
 // import { SquareSwitch } from '../components/UI/circularSwitch';
 import SquareSwitch from '../components/UI/circularSwitch';
 import Divider from '../components/UI/divider';
@@ -169,36 +171,79 @@ const [showLoader,setShowLoader]=useState(false)
       icon: <AboutIcon />,
       content:
         <div className='flex '>
-          <Card
-            title="Welcome to Our Service"
-            content={<p>A collection of beautiful, production-ready UI components to drop into your projects alongside your own code — yours to customize, adapt, and make your own.</p>}
-             
-          >
- <div className="flex gap-2">
-                <button className="px-4 py-2 bg-blue-500 text-white rounded-md">Learn More</button>
-            <button className="px-4 py-2 bg-gray-300 text-black rounded-md">Dismiss</button>
-              </div>
-          </Card>
-          <Card
-            title="Welcome to Our Service"
-            content={<p>A collection of beautiful, production-ready UI components to drop into your projects alongside your own code — yours to customize, adapt, and make your own.</p>}
-            footer={
-              <div className="flex gap-2">
-                {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-md">Learn More</button>
-            <button className="px-4 py-2 bg-gray-300 text-black rounded-md">Dismiss</button> */}
-              </div>
-            }
+        <Card
+          title="Tailwind CSS Card Component"
+          footer={
+            <div className="flex gap-2">
+              <button className="px-4 py-1.5 text-sm bg-blue-500 text-white rounded-md">
+                Documentation
+              </button>
+              <button className="px-4 py-1.5 text-sm bg-gray-300 text-black rounded-md">
+                Dismiss
+              </button>
+            </div>
+          }
+        >
+          <img
+            src={Image}
+            alt="Tailwind CSS Card"
+            className="w-full h-50 rounded-md mb-4"
           />
-          <Card
-            title="Welcome to Our Service"
-            content={<p>A collection of beautiful, production-ready UI components to drop into your projects alongside your own code — yours to customize, adapt, and make your own.</p>}
-            footer={
-              <div className="flex gap-2">
-                {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-md">Learn More</button>
-            <button className="px-4 py-2 bg-gray-300 text-black rounded-md">Dismiss</button> */}
-              </div>
-            }
+          <p>
+            The Tailwind CSS Card Component offers a flexible layout system with utility classes.
+            It allows you to build beautiful, responsive cards with ease. Combine images, text,
+            and actions to create an engaging UI element that fits your design system.
+          </p>
+        </Card> 
+         <Card
+          title="Tailwind CSS Card Component"
+          footer={
+            <div className="flex gap-2">
+              <button className="px-4 py-1.5 text-sm bg-blue-500 text-white rounded-md">
+                Documentation
+              </button>
+              <button className="px-4 py-1.5 text-sm bg-gray-300 text-black rounded-md">
+                Dismiss
+              </button>
+            </div>
+          }
+        >
+          <img
+            src={Image}
+            alt="Tailwind CSS Card"
+            className="w-full h-50 rounded-md mb-4"
           />
+          <p>
+            The Tailwind CSS Card Component offers a flexible layout system with utility classes.
+            It allows you to build beautiful, responsive cards with ease. Combine images, text,
+            and actions to create an engaging UI element that fits your design system.
+          </p>
+        </Card>
+        <Card
+          title="Tailwind CSS Card Component"
+          footer={
+            <div className="flex gap-2">
+              <button className="px-4 py-1.5 text-sm bg-blue-500 text-white rounded-md">
+                Documentation
+              </button>
+              <button className="px-4 py-1.5 text-sm bg-gray-300 text-black rounded-md">
+                Dismiss
+              </button>
+            </div>
+          }
+        >
+          <img
+            src={Image}
+            alt="Tailwind CSS Card"
+            className="w-full h-50 rounded-md mb-4"
+          />
+          <p>
+            The Tailwind CSS Card Component offers a flexible layout system with utility classes.
+            It allows you to build beautiful, responsive cards with ease. Combine images, text,
+            and actions to create an engaging UI element that fits your design system.
+          </p>
+        </Card>
+          
         </div>
     }
   ];
@@ -550,77 +595,149 @@ const [showLoader,setShowLoader]=useState(false)
       <br />
       <h1 className="text-3xl font-bold   text-center text-gray-800 dark:text-white mb-2">Card Component Example</h1>
       <div className='p-5  '>
-     <Card
-          title="Welcome to Our Service"
-          content={<p>A collection of beautiful, production-ready UI components to drop into your projects alongside your own code — yours to customize, adapt, and make your own.</p>}
+      <Card
+          title="Tailwind CSS Card Component"
           footer={
             <div className="flex gap-2">
-              {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-md">Learn More</button>
-            <button className="px-4 py-2 bg-gray-300 text-black rounded-md">Dismiss</button> */}
+              <button className="px-4 py-1.5 text-sm bg-blue-500 text-white rounded-md">
+                Documentation
+              </button>
+              <button className="px-4 py-1.5 text-sm bg-gray-300 text-black rounded-md">
+                Dismiss
+              </button>
             </div>
           }
-        > 
+        >
+          <img
+            src={Image}
+            alt="Tailwind CSS Card"
+            className="w-full h-50 rounded-md mb-4"
+          />
+          <p>
+            The Tailwind CSS Card Component offers a flexible layout system with utility classes.
+            It allows you to build beautiful, responsive cards with ease. Combine images, text,
+            and actions to create an engaging UI element that fits your design system.
+          </p>
         </Card>
         <br />
-        <CountCard
-          title="Basic Card"
-          description="This is a basic card with a title, description, and a number."
-          number={1}
-        />
+        <CountCard number={1} title="Analytics">
+          <img
+            src={Image}
+            alt="Dummy"
+            className="w-full rounded-md mb-3"
+          />
+          <p>This card shows the analytics summary of user engagement.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">View Details</button>
+        </CountCard>
      </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-5'>
         {/* Example 1: Basic Card with Buttons */}
 
         <Card
-          title="Welcome to Our Service"
-          content={<p>A collection of beautiful, production-ready UI components to drop into your projects alongside your own code — yours to customize, adapt, and make your own.</p>}
+          title="Tailwind CSS Card Component"
           footer={
             <div className="flex gap-2">
-              {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-md">Learn More</button>
-            <button className="px-4 py-2 bg-gray-300 text-black rounded-md">Dismiss</button> */}
+              <button className="px-4 py-1.5 text-sm bg-blue-500 text-white rounded-md">
+                Documentation
+              </button>
+              <button className="px-4 py-1.5 text-sm bg-gray-300 text-black rounded-md">
+                Dismiss
+              </button>
             </div>
           }
         >
-           
+          <img
+            src={Image}
+            alt="Tailwind CSS Card"
+            className="w-full h-50 rounded-md mb-4"
+          />
+          <p>
+            The Tailwind CSS Card Component offers a flexible layout system with utility classes.
+            It allows you to build beautiful, responsive cards with ease. Combine images, text,
+            and actions to create an engaging UI element that fits your design system.
+          </p>
         </Card>
         <Card
-          title="Welcome to Our Service"
-          content={<p>A collection of beautiful, production-ready UI components to drop into your projects alongside your own code — yours to customize, adapt, and make your own.</p>}
+          title="Tailwind CSS Card Component"
           footer={
             <div className="flex gap-2">
-              {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-md">Learn More</button>
-            <button className="px-4 py-2 bg-gray-300 text-black rounded-md">Dismiss</button> */}
+              <button className="px-4 py-1.5 text-sm bg-blue-500 text-white rounded-md">
+                Documentation
+              </button>
+              <button className="px-4 py-1.5 text-sm bg-gray-300 text-black rounded-md">
+                Dismiss
+              </button>
             </div>
           }
-        />
+        >
+          <img
+            src={Image}
+            alt="Tailwind CSS Card"
+            className="w-full h-50 rounded-md mb-4"
+          />
+          <p>
+            The Tailwind CSS Card Component offers a flexible layout system with utility classes.
+            It allows you to build beautiful, responsive cards with ease. Combine images, text,
+            and actions to create an engaging UI element that fits your design system.
+          </p>
+        </Card>
         <Card
-          title="Welcome to Our Service"
-          content={<p>A collection of beautiful, production-ready UI components to drop into your projects alongside your own code — yours to customize, adapt, and make your own.</p>}
+          title="Tailwind CSS Card Component"
           footer={
             <div className="flex gap-2">
-              {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-md">Learn More</button>
-            <button className="px-4 py-2 bg-gray-300 text-black rounded-md">Dismiss</button> */}
+              <button className="px-4 py-1.5 text-sm bg-blue-500 text-white rounded-md">
+                Documentation
+              </button>
+              <button className="px-4 py-1.5 text-sm bg-gray-300 text-black rounded-md">
+                Dismiss
+              </button>
             </div>
           }
-        />
+        >
+          <img
+            src={Image}
+            alt="Tailwind CSS Card"
+            className="w-full h-50 rounded-md mb-4"
+          />
+          <p>
+            The Tailwind CSS Card Component offers a flexible layout system with utility classes.
+            It allows you to build beautiful, responsive cards with ease. Combine images, text,
+            and actions to create an engaging UI element that fits your design system.
+          </p>
+        </Card>
       </div>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-5'>
-        <CountCard
-          title="Basic Card"
-          description="This is a basic card with a title, description, and a number."
-          number={1}
-        />
-        <CountCard
-          title="Basic Card"
-          description="This is a basic card with a title, description, and a number."
-          number={2}
-        />
-        <CountCard
-          title="Basic Card"
-          description="This is a basic card with a title, description, and a number."
-          number={3}
-        />
+        <CountCard number={1} title="Analytics">
+          <img
+            src={Image}
+            alt="Dummy"
+            className="w-full rounded-md mb-3"
+          />
+          <p>This card shows the analytics summary of user engagement.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">View Details</button>
+        </CountCard>
+
+        <CountCard number={1} title="Analytics">
+          <img
+            src="https://via.placeholder.com/300x150"
+            alt="Dummy"
+            className="w-full rounded-md mb-3"
+          />
+          <p>This card shows the analytics summary of user engagement.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">View Details</button>
+        </CountCard>
+
+        <CountCard number={1} title="Analytics">
+          <img
+            src="https://via.placeholder.com/300x150"
+            alt="Dummy"
+            className="w-full rounded-md mb-3"
+          />
+          <p>This card shows the analytics summary of user engagement.</p>
+          <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">View Details</button>
+        </CountCard>
+
 
       </div>
       <br />
