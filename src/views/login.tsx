@@ -46,11 +46,13 @@ const Login: React.FC = () => {
 
 
   const handleLogin = () => {
-    // e.preventDefault();
     console.log('Email:', email);
     console.log('Password:', password);
-    navigate('/dashboard')
+    // You can do validation here, then navigate
+    navigate('/dashboard');
   };
+
+
 
   return (
     <>
@@ -108,7 +110,7 @@ const Login: React.FC = () => {
               </p>
             </div>
 
-            <form className="mt-4 space-y-6">
+            <div className="mt-4 space-y-6">
               <Input
                 id="email"
                 name="email"
@@ -129,15 +131,12 @@ const Login: React.FC = () => {
               />
               <Button
                 text="Login"
-                onClick={() => {
-                  console.log("Clicked!");
-                  handleLogin();
-                }}
+                onClick={() => handleLogin()}
                 type="info"
-                size="md"
+                size="sm"
                 fullwidth={true}
               />
-            </form>
+            </div>
 
             <p className="mt-6 text-center text-sm text-gray-500">
               Don’t have an account?{' '}

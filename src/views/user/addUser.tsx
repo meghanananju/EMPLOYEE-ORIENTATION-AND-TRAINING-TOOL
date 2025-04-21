@@ -104,14 +104,15 @@ function AddUser() {
   // }));
 
   //  // Extract headers dynamically by getting the keys from the first object in the data
-  //   const headers = data.length > 0 ? Object.keys(data[0]) : [];
+  //   const headers = data.length > 0 ? Object.keys(data[0]) : [];  const [value, setValue] = useState([]);
+
   const handleSearch = () => {
     console.log('Searching for:', searchTerm);
   };
   return (
     <>
       <div className="p-1">
-        <div className="border-b pb-1 mb-1">
+        <div className="border-b border-gray-200 pb-1 mb-2">
           <div className="grid grid-cols-12 gap-4">
             {/* Page Header */}
             <div className="col-span-12 sm:col-span-2">
@@ -185,12 +186,17 @@ function AddUser() {
 
               <Pulldown
                 options={roles}
-                value={{ id: 1, name: 'Admin' }}
-                selectType="single"
+                value={value}
+                selectType="multi"
                 placeholder="Select a Role Type"
-                label='Select a value'
+                label="Select a value"
                 required
+                onChange={(val) => {
+                  console.log('Selected:', val);
+                  setValue(val);
+                }}
               />
+
 
               {/* Add more inputs as needed */}
             </div>
