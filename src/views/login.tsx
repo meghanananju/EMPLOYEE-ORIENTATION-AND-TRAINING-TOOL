@@ -45,12 +45,14 @@ const Login: React.FC = () => {
 const navigate= useNavigate();
 
 
-  const handleLogin = ( ) => {
-    // e.preventDefault();
+ const handleLogin = () => {
     console.log('Email:', email);
     console.log('Password:', password);
-    navigate('/dashboard')
+    // You can do validation here, then navigate
+    navigate('/dashboard');
   };
+
+
 
   return (
     <>
@@ -108,36 +110,33 @@ const navigate= useNavigate();
         </p>
       </div>
 
-      <form  className="mt-4 space-y-6">
-        <Input
-          id="email"
-          name="email"
-          label="Email Address"
-          type="email"
-          placeholder="Enter your email"
-          onChange={(val) => setEmail(val)}
-          value={email}
-        />
-        <Input
-          id="password"
-          name="password"
-          label="Password"
-          type="password"
-          placeholder="Enter your password"
-          onChange={(val) => setPassword(val)}
-          value={password}
-        />
-        <Button
-          text="Login"
-          onClick={() => {
-        console.log("Clicked!");
-        handleLogin();
-      }}
-           type="info"
-          size="md"
-          fullwidth={true}
-        />
-      </form>
+   <div className="mt-4 space-y-6">
+            <Input
+              id="email"
+              name="email"
+              label="Email Address"
+              type="email"
+              placeholder="Enter your email"
+              onChange={(val) => setEmail(val)}
+              value={email}
+            />
+            <Input
+              id="password"
+              name="password"
+              label="Password"
+              type="password"
+              placeholder="Enter your password"
+              onChange={(val) => setPassword(val)}
+              value={password}
+            />
+            <Button
+              text="Login"
+              onClick={()=>handleLogin()}  
+              type="info"  
+              size="sm"
+              fullwidth={true}
+             />
+          </div>
 
       <p className="mt-6 text-center text-sm text-gray-500">
         Don’t have an account?{' '}

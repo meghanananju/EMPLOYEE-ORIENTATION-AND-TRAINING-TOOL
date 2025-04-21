@@ -56,6 +56,7 @@ interface TableData {
 function AddUser() {
 const [searchTerm, setSearchTerm] = useState('');
   const [showStrip, setShowStrip] = useState(true);
+  const [value, setValue] = useState([]);
 
   const handleSearch = () => {
       console.log('Searching for:', searchTerm);
@@ -74,7 +75,7 @@ const data: TableData[] = Array.from({ length: 30 }, (_, i) => ({
   return (
    <>
 <div className="p-1">
-<div className="border-b pb-1 mb-1">
+<div className="border-b border-gray-200 pb-1 mb-2">
   <div className="grid grid-cols-12 gap-4">
     {/* Page Header */}
     <div className="col-span-12 sm:col-span-2">
@@ -146,14 +147,19 @@ const data: TableData[] = Array.from({ length: 30 }, (_, i) => ({
           required
         />
          
-        <Pulldown
-          options={roles}
-          value={{ id: 1, name: 'Admin' }}
-          selectType="single"
-          placeholder="Select a Role Type"
-          label='Select a value'
-          required
-          />
+       <Pulldown
+  options={roles}
+  value={value}
+  selectType="multi"
+  placeholder="Select a Role Type"
+  label="Select a value"
+  required
+  onChange={(val) => {
+    console.log('Selected:', val);
+    setValue(val);
+  }}
+/>
+
 
         {/* Add more inputs as needed */}
       </div>
